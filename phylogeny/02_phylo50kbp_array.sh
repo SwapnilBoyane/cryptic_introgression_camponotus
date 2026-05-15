@@ -40,9 +40,9 @@ for (( run=$START_NUM; run<=$END_NUM; run++ )); do
 
 	Rscript --vanilla calculate_windows.r /lustre/scratch/sboyane/camphybrid/08_phylo/windows/${chrom_array}__${start_array}__${end_array}.simple.vcf popmap_phylo.txt
 
-	#Rscript --vanilla create_fasta.r /lustre/scratch/sboyane/camphybrid/08_phylo/windows/${chrom_array}__${start_array}__${end_array}.simple.vcf popmap_phylo.txt
+	Rscript --vanilla create_fasta.r /lustre/scratch/sboyane/camphybrid/08_phylo/windows/${chrom_array}__${start_array}__${end_array}.simple.vcf popmap_phylo.txt
 
-	#/lustre/work/sboyane/raxml/raxmlHPC-PTHREADS-SSE3 -T 2 -f a -x 50 -m GTRCAT -p 253 -N 100 -s /lustre/scratch/sboyane/camphybrid/08_phylo/windows/${chrom_array}__${start_array}__${end_array}.fasta -n ${chrom_array}__${start_array}__${end_array}.tre -w /lustre/scratch/sboyane/camphybrid/08_phylo/windows/
+	/lustre/work/sboyane/raxml/raxmlHPC-PTHREADS-SSE3 -T 2 -f a -x 50 -m GTRCAT -p 253 -N 100 -s /lustre/scratch/sboyane/camphybrid/08_phylo/windows/${chrom_array}__${start_array}__${end_array}.fasta -n ${chrom_array}__${start_array}__${end_array}.tre -w /lustre/scratch/sboyane/camphybrid/08_phylo/windows/
 
 	rm /lustre/scratch/sboyane/camphybrid/08_phylo/windows/${chrom_array}__${start_array}__${end_array}.recode.vcf
 	rm /lustre/scratch/sboyane/camphybrid/08_phylo/windows/${chrom_array}__${start_array}__${end_array}.simple.vcf
