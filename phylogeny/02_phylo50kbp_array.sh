@@ -5,8 +5,7 @@
 #SBATCH --partition nocona
 #SBATCH --time=48:00:00
 #SBATCH --mem-per-cpu=8G
-#SBATCH --array=2-965
-
+#SBATCH --array=1-965
 
 module load gcc/14.2.0
 module load R/4.4.1
