@@ -1,0 +1,9 @@
+# extract tre generated windows coordinated for plotting 
+for f in RAxML_bipartitions.*.tre; do
+    base=$(basename "$f" .tre)
+    info=${base#RAxML_bipartitions.}
+    echo "$info" | sed 's/__/\t/g'
+done > window_coordinates.tsv
+
+#order them 
+sort -k1,1 -k2,2n window_coordinates.tsv > window_coordinates_sorted.tsv
